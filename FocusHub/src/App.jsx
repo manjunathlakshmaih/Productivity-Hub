@@ -1,25 +1,30 @@
-import { useState, useEffect } from 'react'
-import moon from './assets/moon.png';
-import sun from './assets/sun.png';
+import Header from './components/Header/Header';
+import TaskList from './components/TaskList/TaskList';
+import PomodoroTimer from './components/PomodoroTimer/PomodoroTimer';
+import DailyGoals from './components/DailyGoals/DailyGoals';
+import Quotes from './components/Quotes/Quotes';
+import ThemeSelector from './components/ThemeSelector/ThemeSelector';
+import AnalyticsDashboard from './components/AnalyticsDashboard/AnalyticsDashboard';
+import FocusMusic from './components/FocusMusic/FocusMusic';
 import './App.css'
 
 function App() {
-  const [theme, setTheme] = useState('light');
-
-  useEffect(() => {
-    document.body.className = theme;
-  }, [theme]);
-
-  const toggleTheme = () => {
-    setTheme(theme === 'light' ? 'dark' : 'light');
-  }
 
   return (
     <div className='App'>
-      <div className='app-header'>
-        <h1>FocusHub</h1>
-        <button className='toggle-button' onClick={toggleTheme}><img src={theme === 'light' ? moon : sun} alt="theme icon" /></button>
+      <div className='container'>
+        <Header />
+        <TaskList />
+        <PomodoroTimer />
+        <DailyGoals />
+        <Quotes />
+        <ThemeSelector />
+        <AnalyticsDashboard />
+        <FocusMusic />
       </div>
+      <footer>
+        <p>© 2023 FocusHub. All rights reserved.</p>
+      </footer>
     </div>
   )
 }
