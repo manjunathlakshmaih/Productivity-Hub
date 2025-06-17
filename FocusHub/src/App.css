@@ -4,32 +4,15 @@
   padding: 2rem;
 }
 
-body.light {
-  background-color: #f0f0f0;
-  color: #222;
+.container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem; /* Adds spacing between grid items */
 }
 
-body.dark {
-  background-color: #121212;
-  color: #f9f9f9;
-}
-
-.app-header {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  padding: 0px 0px 0px 0px;
-  align-items: center;
-  gap: 62rem;
-}
-
-.toggle-button {
-  background: transparent;
-  cursor: pointer;
-
-}
-img {
-  background-color: none;
-  width: 40px;
-  height: 40px;
+footer {
+  text-align: center;
+  margin-top: 2rem;
+  font-size: 0.9rem;
+  color: #666;
 }
