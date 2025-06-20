@@ -1,0 +1,99 @@
+:root {
+  --card-bg: rgba(255,255,255,0.85);
+  --card-border: rgba(180, 220, 250, 0.6);
+  --card-shadow: 0 4px 24px rgba(0,0,0,0.10);
+  --pomodoro-accent: #0ea5e9;
+  --pomodoro-accent-light: #bae6fd;
+  --pomodoro-text: #1e293b;
+}
+
+body.dark {
+  --card-bg: rgba(30,41,59,0.85);
+  --card-border: rgba(14, 165, 233, 0.25);
+  --card-shadow: 0 4px 32px rgba(0,0,0,0.32);
+  --pomodoro-accent: #38bdf8;
+  --pomodoro-accent-light: #0ea5e9;
+  --pomodoro-text: #f1f5f9;
+}
+
+.PomodoroTimer {
+  width: 370px;
+  height: 420px;
+  max-width: 100%;
+  max-height: 100%;
+  background: var(--card-bg);
+  border: 2px solid var(--card-border);
+  border-radius: 20px;
+  box-shadow: var(--card-shadow);
+  padding: 2rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  overflow: hidden;
+  position: relative;
+  transition: background 0.3s, border 0.3s, box-shadow 0.2s;
+  backdrop-filter: blur(10px) saturate(120%);
+  animation: fadeInUp 0.7s cubic-bezier(.23,1.01,.32,1) both;
+}
+
+.PomodoroTimer:hover {
+  box-shadow: 0 16px 48px var(--pomodoro-accent-light);
+  border-color: var(--pomodoro-accent);
+  transform: translateY(-4px) scale(1.02);
+}
+
+.PomodoroTimer h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--pomodoro-text);
+  margin-bottom: 1.2rem;
+  letter-spacing: 0.04em;
+  text-align: center;
+}
+
+.timer-display {
+  font-size: 3.2rem;
+  font-weight: bold;
+  color: var(--pomodoro-accent);
+  background: rgba(190, 230, 253, 0.18);
+  border-radius: 16px;
+  padding: 1.2rem 2.5rem;
+  margin-bottom: 2rem;
+  box-shadow: 0 2px 12px rgba(56,189,248,0.08);
+  letter-spacing: 0.08em;
+  text-align: center;
+  transition: background 0.3s, color 0.3s;
+}
+
+body.dark .timer-display {
+  background: rgba(14, 165, 233, 0.10);
+  color: var(--pomodoro-accent);
+}
+
+.pomodoro-controls {
+  display: flex;
+  gap: 1.2rem;
+  justify-content: center;
+  margin-top: auto;
+}
+
+.pomodoro-controls button {
+  background: var(--pomodoro-accent);
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 0.7rem 1.4rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(14,165,233,0.08);
+  transition: background 0.2s, color 0.2s, transform 0.1s;
+  outline: none;
+}
+
+.pomodoro-controls button:hover {
+  background: var(--pomodoro-accent-light);
+  color: var(--pomodoro-accent);
+  transform: translateY(-2px) scale(1.04);
+}

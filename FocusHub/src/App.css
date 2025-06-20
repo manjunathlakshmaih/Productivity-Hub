@@ -1,18 +1,70 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
+html, body, #root {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-.container {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 1.5rem; /* Adds spacing between grid items */
+.app-header {
+  min-height: 80px;
 }
 
 footer {
+  min-height: 60px;
   text-align: center;
   margin-top: 2rem;
-  font-size: 0.9rem;
-  color: #666;
+  font-size: 1rem;
+  color: #64748b;
+  letter-spacing: 0.02em;
+  background: transparent;
+  padding-bottom: 1rem;
+}
+
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2.5rem;
+  justify-content: center;
+  align-items: stretch;
+  width: 100%;
+  min-height: calc(100vh - 80px - 60px); 
+  background: linear-gradient(120deg, #e0f2fe 60%, #f8fafc 100%);
+  border-radius: 24px;
+  padding: 2.5rem 2rem;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.08);
+  margin-bottom: 2rem;
+  transition: background 0.3s;
+  box-sizing: border-box;
+}
+
+body.dark .container {
+  background: linear-gradient(120deg, #1e293b 60%, #0ea5e9 100%);
+}
+
+.container > * {
+  flex: 0 0 48%;
+  max-width: 48%;
+  min-width: 320px;
+  height: 100%;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 0;
+}
+
+@media (max-width: 900px) {
+  .container {
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem;
+    gap: 1.2rem;
+    min-height: unset;
+  }
+  .container > * {
+    flex: 0 0 100%;
+    max-width: 100%;
+    min-width: 0;
+    height: auto;
+    margin-bottom: 1.2rem;
+  }
 }

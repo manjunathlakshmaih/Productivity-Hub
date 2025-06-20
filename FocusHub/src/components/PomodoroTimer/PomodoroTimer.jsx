@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import './PomodoroTimer.css'
 
 const PomodoroTimer = () => {
   const [time, setTime] = useState(25 * 60); // 25 minutes
@@ -21,7 +22,7 @@ const PomodoroTimer = () => {
   };
 
   return (
-    <div>
+    <div className='PomodoroTimer'>
       <h2>Pomodoro Timer</h2>
       <p>{formatTime(time)}</p>
       <button onClick={() => setIsRunning(!isRunning)}>

@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import './Quotes.css'
 
 const Quotes = () => {
   const [quote, setQuote] = useState('');
@@ -10,7 +11,7 @@ const Quotes = () => {
   }, []);
 
   return (
-    <div>
+    <div className='Quotes'>
       <h2>Inspirational Quote</h2>
       <p>{quote}</p>
     </div>

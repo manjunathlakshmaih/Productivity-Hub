@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import './DailyGoals.css'
 
 const DailyGoals = () => {
   const [goals, setGoals] = useState([]);
@@ -20,7 +21,7 @@ const DailyGoals = () => {
   };
 
   return (
-    <div>
+    <div className='DailyGoals'>
       <h2>Daily Goals</h2>
       <input
         type="text"

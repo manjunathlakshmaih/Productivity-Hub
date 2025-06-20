@@ -1,29 +1,50 @@
-body.light {
-    background-color: #f0f0f0;
-    color: #222;
-  }
-  
-  body.dark {
-    background-color: #121212;
-    color: #f9f9f9;
-  }
-  
-  .app-header {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    padding: 0px 0px 0px 0px;
-    align-items: center;
-    gap: 62rem;
-  }
-  
-  .toggle-button {
-    background: transparent;
-    cursor: pointer;
-  
-  }
-  img {
-    background-color: none;
-    width: 40px;
-    height: 40px;
-  }
+.app-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem 2rem;
+  background: rgba(255,255,255,0.7);
+  backdrop-filter: blur(8px);
+  border-radius: 18px;
+  margin-bottom: 2rem;
+  box-shadow: 0 2px 16px rgba(0,0,0,0.06);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  transition: background 0.3s;
+}
+
+body.dark .app-header {
+  background: rgba(30,41,59,0.7);
+}
+
+.app-header h1 {
+  font-size: 2.2rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  color: var(--global-text);
+}
+
+.toggle-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  border-radius: 50%;
+  padding: 0.5rem;
+  transition: background 0.2s;
+  display: flex;
+  align-items: center;
+}
+
+.toggle-button:hover {
+  background: #bae6fd;
+}
+
+body.dark .toggle-button:hover {
+  background: #0ea5e9;
+}
+
+.toggle-button img {
+  width: 36px;
+  height: 36px;
+}
